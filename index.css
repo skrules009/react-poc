@@ -18,20 +18,20 @@
 .menu-items>ul>li {
     padding: 20px;
 }
-.res-cart{
+.res-cart, .shimmer-cards {
     width: 200px;
     margin: 10px;
     background-color: #f0f0f0;
 
 }
-
+.shimmer-cards { height: 400px;}
 .res-cart:hover {
     border: 1px solid black;
     cursor: pointer;
 }
 
 .res-log {
-    padding: 0 5px;
+    padding: 5px;
 }
 
 .res-log > img {
@@ -44,7 +44,10 @@
     margin: 5px;
 }
 
-.res-container {
+.res-container, .shimmer-container {
     display: flex;
     flex-wrap: wrap;
+}
+.btn-login {
+    padding: 0 20px;
 }
