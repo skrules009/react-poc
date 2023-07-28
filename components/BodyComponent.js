@@ -27,7 +27,7 @@ const BodyComponent = ()=> {
             <div className="res-container">
                 {
                     
-                    filteredApiData.map((restaura)=><RestourantCart key={restaura?.info?.id} restData={restaura}/>)
+                    filteredApiData?.map((restaura)=><RestourantCart key={restaura?.info?.id} restData={restaura}/>)
                 }
                 
             </div>

@@ -1,6 +1,40 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import AppLayout from "./components/AppLayout";
+import BodyComponent from "./components/BodyComponent";
+import Header from "./components/Header";
+import Error from "./components/Error";
+import AboutUs from "./components/AboutUs";
+import ContatUs from "./components/ContactUs";
+import {createBrowserRouter, RouterProvider, Outlet} from "react-router-dom";
+
+const AppLayout = ()=> (
+    <div className="app-container">
+        {/* <BinarySearch/> */}
+        <Header/>
+        <Outlet/>
+    </div>
+    
+);
+ const appRouter = createBrowserRouter([{
+    path: "/",
+    element: <AppLayout/>,
+    children: [
+        {
+            path: "/",
+            element: <BodyComponent/>
+        },
+        {
+            path: "/about",
+            element: <AboutUs/>
+        },
+        {
+            path: "/contact",
+            element: <ContatUs/>
+        }
+    ],
+    errorElement: <Error/>
+ },
+ ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout/>);
+root.render(<RouterProvider router={appRouter}/>);
